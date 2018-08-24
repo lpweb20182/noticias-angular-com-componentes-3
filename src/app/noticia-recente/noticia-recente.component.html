@@ -1,0 +1,24 @@
+<h1>Notícias Recentes</h1>
+<hr>
+<nav>
+  <button (click)="irPara('home')">Home</button> |
+  <button (click)="irPara('lista')">Todas as notícias</button> |
+  <button (click)="irPara('cadastro')">Cadastrar</button>
+</nav>
+<hr>
+
+<div>
+  <h2>{{ leituraNoticia.titulo }}</h2>
+  <div class="leitura-noticia-info">
+    Por {{ leituraNoticia.autor }}
+    <span *ngIf="leituraNoticia.emailDoAutor">({{ leituraNoticia.emailDoAutor }})</span>
+    em {{ leituraNoticia.data | date }}
+  </div>
+  <hr>
+  <div class="leitura-noticia-conteudo">
+    {{ leituraNoticia.conteudo }}
+  </div>
+  <div class="leitura-noticia-rodape">
+    <button (click)="fechar()">Fechar</button>
+  </div>
+</div>
